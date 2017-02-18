@@ -1,0 +1,10 @@
+#!/bin/bash
+git checkout gh-pages
+git merge master
+npm run wp:deploy
+rm .gitignore
+git add -A
+git commit -m 'deploy'
+git push origin gh-pages
+echo '.DS_Store\nnode_modules/*\nbundle.js\nbundle.js.map' > .gitignore
+git checkout master
