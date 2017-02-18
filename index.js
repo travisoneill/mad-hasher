@@ -21,8 +21,8 @@ function build(){
   make('input', {type: 'text', className: 'salt', id: 'salt', placeholder: 'Enter Salt'}, false, false, false);
   make('input', {type: 'radio', className: 'random-salt', id: 'random', value: 'random-salt'}, true, false, true);
   make('button', {innerHTML: 'Generate Hash', id: 'generate', className: 'generate'}, true, 'up', false);
-  make('div', {className: 'hash-display', id: 'hash-display'}, true, '', false)
-  make('div', {className: 'salt-display', id: 'salt-display'}, true, '', false)
+  make('div', {className: 'hash-display', id: 'hash-display'}, true, '', false);
+  make('div', {className: 'salt-display', id: 'salt-display'}, true, '', false);
   document.querySelector('#generate').addEventListener('click', generateHash);
 }
 
@@ -38,7 +38,7 @@ function make(el, attrs, brk, nest, label){
   if (label) {
     let lbl = document.createElement('label');
     lbl.for = attrs.id;
-    lbl.innerHTML = attrs.id
+    lbl.innerHTML = attrs.id;
     container.appendChild(lbl);
   }
   for (var attr in attrs){
